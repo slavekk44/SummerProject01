@@ -103,12 +103,16 @@ public class Game extends JFrame  {
 		JPanel panel5 = new JPanel(new GridLayout(3,1));{
 			panel5.setBackground(Color.GREEN);
 		
-			JPanel panelm1 = new JPanel(new BorderLayout());{
+			JPanel panelm1 = new JPanel(new GridLayout(1,2));{
 			panelm1.setBackground(Color.DARK_GRAY);
 			enemyName = new JLabel(" Opponenet Name");
 			enemyName.setForeground(Color.WHITE);
 			panelm1.add(enemyName);
 			panelm1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
+			JLabel enemyAvatar = new JLabel("IMAGE");
+			enemyAvatar.setForeground(Color.WHITE);
+			panelm1.add(enemyAvatar);
+			
 			}
 			panel5.add(panelm1);
 			
@@ -126,6 +130,11 @@ public class Game extends JFrame  {
 			myName = new JLabel(" My Name");
 			myName.setForeground(Color.WHITE);
 			panelm3.add(myName);
+			JLabel myAvatar = new JLabel("MY IMAGE");
+			myAvatar.setForeground(Color.WHITE);
+			panelm3.add(myAvatar);
+			
+			
 			
 			
 			}
