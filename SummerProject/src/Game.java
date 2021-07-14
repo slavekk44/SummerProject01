@@ -124,7 +124,6 @@ public class Game extends JFrame  {
 			panelm3.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
 			
 			myName = new JLabel(" My Name");
-			
 			myName.setForeground(Color.WHITE);
 			panelm3.add(myName);
 			
