@@ -11,6 +11,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 
 public class Game extends JFrame  {
@@ -19,7 +21,9 @@ public class Game extends JFrame  {
 	
 	//panel2 east
 	private JButton use,replace, cart1, cart2; 
-	
+	//panel4
+	private JTextField inputChat;
+	private JLabel outputChat;
 	//panel5 east middle
 	private JLabel deckName, myName, enemyName;
 	
@@ -32,7 +36,7 @@ public class Game extends JFrame  {
 		JPanel panel1 = new JPanel(new FlowLayout());
 		{
 		panel1.setBackground(Color.GRAY);
-		//panel1.setPreferredSize(new Dimension(70,50));
+		panel1.setPreferredSize(new Dimension(70,50));
 			
 		settings = new JButton("Settings");
 		settings.setBackground(Color.RED);
@@ -89,9 +93,28 @@ public class Game extends JFrame  {
 //		add(avatarE);
 	
 	// east top
-		JPanel panel4 = new JPanel(new GridLayout(2,1));{
-		panel4.setBackground(Color.black);
+		JPanel panel4 = new JPanel(new BorderLayout());{
+		panel4.setBackground(Color.WHITE);
+			JLabel chatLab = new JLabel("CHAT");
+			chatLab.setFont(new Font("TimesRoman", Font.BOLD, 20));
+			chatLab.setHorizontalAlignment(SwingConstants.CENTER);
+			chatLab.setBorder(BorderFactory.createMatteBorder(
+                    5, 5, 1, 5, Color.red));
+			panel4.add(chatLab, BorderLayout.NORTH);
+			
 		
+			outputChat = new JLabel();
+			outputChat.setBorder(BorderFactory.createMatteBorder(
+                    0, 5, 1, 5, Color.red));
+			panel4.add(outputChat);
+			inputChat = new JTextField();
+			inputChat.setFont(new Font("TimesRoman", Font.BOLD, 25));
+			inputChat.setBorder(BorderFactory.createMatteBorder(
+					0, 5, 5, 5, Color.red));
+			
+			
+			panel4.add(inputChat,BorderLayout.SOUTH);
+			
 	
 	    //panel4.setPreferredSize();
 		
@@ -196,10 +219,45 @@ public class Game extends JFrame  {
 		
 		
 		// Center Panel Settings
-		JPanel panel3 = new JPanel();
+		JPanel panel3 = new JPanel(new GridLayout(2,2));
 		{
-		panel3.setBackground(Color.GRAY);
+		panel3.setBackground(Color.LIGHT_GRAY);
 		panel3.setPreferredSize(new Dimension(300,100));
+		
+		JPanel center1 = new JPanel(new BorderLayout());
+		center1.setBorder(BorderFactory.createMatteBorder(
+				5, 5, 5, 5, Color.BLACK));
+		JLabel resultEnemy = new JLabel("100");
+		resultEnemy.setFont(new Font("Monospaced", Font.BOLD, 25));
+		resultEnemy.setHorizontalAlignment(JLabel. CENTER);
+		resultEnemy.setBorder(BorderFactory.createMatteBorder(
+				5, 5, 5, 5, Color.CYAN));
+		center1.add(resultEnemy, BorderLayout.SOUTH);
+		
+		
+		
+		JPanel center2 = new JPanel(new BorderLayout());
+		center2.setBorder(BorderFactory.createMatteBorder(
+				5, 5, 5, 5, Color.BLACK));
+		JLabel resultMy = new JLabel("100");
+		resultMy.setFont(new Font("Monospaced", Font.BOLD, 25));
+		resultMy.setHorizontalAlignment(JLabel. CENTER);
+		resultMy.setBorder(BorderFactory.createMatteBorder(
+				5, 5, 5, 5, Color.PINK));
+		center2.add(resultMy, BorderLayout.SOUTH);
+		
+		JPanel center3 = new JPanel();
+		center3.setBorder(BorderFactory.createMatteBorder(
+				5, 5, 5, 5, Color.BLACK));
+		JPanel center4 = new JPanel();
+		center4.setBorder(BorderFactory.createMatteBorder(
+				5, 5, 5, 5, Color.BLACK));
+		panel3.add(center1);
+		panel3.add(center2);
+		panel3.add(center3);
+		panel3.add(center4);
+		
+		
 		
 		avatar = new JLabel("*");
 		avatar.setBackground(Color.BLUE);
