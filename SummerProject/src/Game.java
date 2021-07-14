@@ -20,6 +20,8 @@ public class Game extends JFrame  {
 	//panel2 east
 	private JButton use,replace, cart1, cart2; 
 	
+	//panel5 east middle
+	private JLabel deckName, myName, enemyName;
 	
 	private JLabel avatar, deck,avatarM,avatarE;
 	
@@ -30,7 +32,7 @@ public class Game extends JFrame  {
 		JPanel panel1 = new JPanel(new FlowLayout());
 		{
 		panel1.setBackground(Color.GRAY);
-		panel1.setPreferredSize(new Dimension(70,50));
+		//panel1.setPreferredSize(new Dimension(70,50));
 			
 		settings = new JButton("Settings");
 		settings.setBackground(Color.RED);
@@ -86,26 +88,53 @@ public class Game extends JFrame  {
 //		avatarE.setBorder(BorderFactory.createLineBorder(Color.WHITE, 20));
 //		add(avatarE);
 	
-		// east top
+	// east top
 		JPanel panel4 = new JPanel(new GridLayout(2,1));{
 		panel4.setBackground(Color.black);
 		
 	
-		//panel4.setPreferredSize();
+	    //panel4.setPreferredSize();
 		
 		
 		
 		}
 		
-		// east middle
+	// east middle
 		JPanel panel5 = new JPanel(new GridLayout(3,1));{
-		panel5.setBackground(Color.cyan);
+			panel5.setBackground(Color.GREEN);
 		
-		
+			JPanel panelm1 = new JPanel(new BorderLayout());{
+			panelm1.setBackground(Color.DARK_GRAY);
+			enemyName = new JLabel(" Opponenet Name");
+			enemyName.setForeground(Color.WHITE);
+			panelm1.add(enemyName);
+			panelm1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
+			}
+			panel5.add(panelm1);
+			
+			deckName = new JLabel("BoardGame");
+			deckName.setBackground(Color.GREEN);
+			deckName.setBorder(BorderFactory.createLineBorder(Color.yellow, 10));
+			deckName.setHorizontalAlignment(JLabel. CENTER);
+			deckName.setFont(new Font("TimesRoman", Font.BOLD, 25));
+			panel5.add(deckName);
+			
+			JPanel panelm3 = new JPanel(new GridLayout(1,2));{
+			panelm3.setBackground(Color.DARK_GRAY);
+			panelm3.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
+			
+			myName = new JLabel(" My Name");
+			
+			myName.setForeground(Color.WHITE);
+			panelm3.add(myName);
+			
+			
+			}
+			panel5.add(panelm3);
 		
 		}
 		
-		// east Bottom
+	// east Bottom
 		JPanel panel6 = new JPanel(new GridLayout(2,1));{
 		panel6.setBackground(Color.darkGray);
 		cart1 = new JButton("ATTACK");
