@@ -35,7 +35,7 @@ public class Game extends JFrame  {
 	
 	
 	
-	public Game() {
+	public Game(String name) {
 		Border compound,loweredbevel,raisedbevel;
 		Border redline = BorderFactory.createLineBorder(Color.gray,25);
 		raisedbevel = BorderFactory.createRaisedBevelBorder();
@@ -104,10 +104,12 @@ public class Game extends JFrame  {
 			panel4.add(chatLab, BorderLayout.NORTH);
 			
 		
-			outputChat = new JLabel();
+			outputChat = new JLabel("outputChat");
 			outputChat.setBorder(BorderFactory.createMatteBorder(
                     0, 5, 1, 5, Color.red));
 			panel4.add(outputChat);
+			
+			
 		JPanel panelInput = new JPanel(new BorderLayout());{
 			
 			inputChat = new JTextField();
@@ -127,6 +129,7 @@ public class Game extends JFrame  {
 			panelInput.add(inputChat,BorderLayout.CENTER);
 			panelInput.add(inputButton, BorderLayout.EAST);
 		}
+		
 		panel4.add(panelInput, BorderLayout.SOUTH);
 	
 	    //panel4.setPreferredSize();
@@ -163,7 +166,7 @@ public class Game extends JFrame  {
 			panelm3.setBackground(Color.DARK_GRAY);
 			panelm3.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
 			
-			myName = new JLabel(" My Name");
+			myName = new JLabel(name);
 			myName.setForeground(Color.WHITE);
 			panelm3.add(myName);
 			JLabel myAvatar = new JLabel("MY IMAGE");
@@ -226,61 +229,36 @@ public class Game extends JFrame  {
 		panel3.setBackground(Color.LIGHT_GRAY);
 		panel3.setPreferredSize(new Dimension(300,100));
 		
-		JPanel center1 = new JPanel(new BorderLayout());
-		center1.setBorder(BorderFactory.createMatteBorder(
-				5, 5, 0, 5, Color.CYAN));
-		lifeBar = new JLabel("lifebar MAKE IT PANEL!! GRID LAYOUT 1,100");
-		lifeBar.setOpaque(true);
-		lifeBar.setBackground(Color.GREEN);
-		lifeBar.setHorizontalAlignment(JLabel. CENTER);
-		lifeBar.setBorder(BorderFactory.createMatteBorder(
-		1, 1, 1, 1, Color.BLACK));
-		
-		
-		storyEnemy = new JLabel("You had no luck and you Lose");
-		storyEnemy.setOpaque(true);
-		storyEnemy.setHorizontalAlignment(JLabel. CENTER);
-		storyEnemy.setFont(new Font("Monospaced", Font.BOLD, 20));
-        
-		resultEnemy = new JLabel("100");
-		resultEnemy.setOpaque(true);
-		resultEnemy.setBackground(Color.CYAN);
-		resultEnemy.setFont(new Font("Monospaced", Font.BOLD, 25));
-		resultEnemy.setHorizontalAlignment(JLabel. CENTER);
-		resultEnemy.setBorder(BorderFactory.createMatteBorder(
-				15, 15, 15, 15, Color.CYAN));
-		
-		center1.add(resultEnemy, BorderLayout.SOUTH);
-		center1.add(storyEnemy,BorderLayout.CENTER);
-		center1.add(lifeBar, BorderLayout.NORTH);
+		JPanel center1 = new PlayerPanel("You lose", Color.CYAN);
+		JPanel center2 = new PlayerPanel("You Win", Color.pink);
 		
 		
 		
-		JPanel center2 = new JPanel(new BorderLayout());
-		center2.setBorder(BorderFactory.createMatteBorder(
-				5, 5, 0, 5, Color.PINK));
-//		center2.setBackground(Color.LIGHT_GRAY);
-		lifeBar1 = new JLabel ("Life Bar My");
-		lifeBar1.setBackground(Color.GREEN);
-		lifeBar1.setHorizontalAlignment(JLabel. CENTER);
-		lifeBar1.setOpaque(true);
-		lifeBar1.setBorder(BorderFactory.createMatteBorder(
-				1, 1, 1, 1, Color.BLACK));
-		storyMy = new JLabel("You had luck and you Win");
-		storyMy.setOpaque(true);
-		storyMy.setHorizontalAlignment(JLabel. CENTER);
-		storyMy.setFont(new Font("Monospaced", Font.BOLD, 20));
-		
-		resultMy = new JLabel("100");
-		resultMy.setOpaque(true);
-		resultMy.setFont(new Font("Monospaced", Font.BOLD, 25));
-		resultMy.setHorizontalAlignment(JLabel. CENTER);
-		resultMy.setBackground(Color.PINK);
-		resultMy.setBorder(BorderFactory.createMatteBorder(
-				15, 15, 15, 15, Color.PINK));
-				center2.add(resultMy, BorderLayout.SOUTH);
-				center2.add(storyMy,BorderLayout.CENTER);
-				center2.add(lifeBar1, BorderLayout.NORTH);
+//		JPanel center2 = new JPanel(new BorderLayout());
+//		center2.setBorder(BorderFactory.createMatteBorder(
+//				5, 5, 0, 5, Color.PINK));
+////		center2.setBackground(Color.LIGHT_GRAY);
+//		lifeBar1 = new JLabel ("Life Bar My");
+//		lifeBar1.setBackground(Color.GREEN);
+//		lifeBar1.setHorizontalAlignment(JLabel. CENTER);
+//		lifeBar1.setOpaque(true);
+//		lifeBar1.setBorder(BorderFactory.createMatteBorder(
+//				1, 1, 1, 1, Color.BLACK));
+//		storyMy = new JLabel("You had luck and you Win");
+//		storyMy.setOpaque(true);
+//		storyMy.setHorizontalAlignment(JLabel. CENTER);
+//		storyMy.setFont(new Font("Monospaced", Font.BOLD, 20));
+//		
+//		resultMy = new JLabel("100");
+//		resultMy.setOpaque(true);
+//		resultMy.setFont(new Font("Monospaced", Font.BOLD, 25));
+//		resultMy.setHorizontalAlignment(JLabel. CENTER);
+//		resultMy.setBackground(Color.PINK);
+//		resultMy.setBorder(BorderFactory.createMatteBorder(
+//				15, 15, 15, 15, Color.PINK));
+//				center2.add(resultMy, BorderLayout.SOUTH);
+//				center2.add(storyMy,BorderLayout.CENTER);
+//				center2.add(lifeBar1, BorderLayout.NORTH);
 // show cards Display bottom 
 		JPanel center3 = new JPanel(new BorderLayout());
 		center3.setBorder(BorderFactory.createMatteBorder(
