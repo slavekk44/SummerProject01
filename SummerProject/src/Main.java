@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 		// New Window enter name	
 		String name = JOptionPane.showInputDialog("Enter your name");		
-		// New window enter avatar
+		// N0
 
 		// TODO Auto-generated method stub
 		// creating object Jfram

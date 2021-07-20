@@ -141,18 +141,18 @@ public class Game extends JFrame  {
 	// east middle
 		JPanel panel5 = new JPanel(new GridLayout(3,1));{
 			panel5.setBackground(Color.GREEN);
-		
-			JPanel panelm1 = new JPanel(new GridLayout(1,2));{
-			panelm1.setBackground(Color.DARK_GRAY);
-			enemyName = new JLabel(" Opponenet Name");
-			enemyName.setForeground(Color.WHITE);
-			panelm1.add(enemyName);
-			panelm1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
-			JLabel enemyAvatar = new JLabel("IMAGE");
-			enemyAvatar.setForeground(Color.WHITE);
-			panelm1.add(enemyAvatar);
-			
-			}
+			JPanel panelm1 = new NameAvatarPanel("DEBIL","AVATAR", Color.CYAN);
+//			JPanel panelm1 = new JPanel(new GridLayout(1,2));{
+//			panelm1.setBackground(Color.DARK_GRAY);
+//			enemyName = new JLabel(" Opponenet Name");
+//			enemyName.setForeground(Color.WHITE);
+//			panelm1.add(enemyName);
+//			panelm1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
+//			JLabel enemyAvatar = new JLabel("IMAGE");
+//			enemyAvatar.setForeground(Color.WHITE);
+//			panelm1.add(enemyAvatar);
+//			
+//			}
 			panel5.add(panelm1);
 			
 			deckName = new JLabel("BoardGame");
@@ -162,23 +162,26 @@ public class Game extends JFrame  {
 			deckName.setFont(new Font("TimesRoman", Font.BOLD, 25));
 			panel5.add(deckName);
 			
-			JPanel panelm3 = new JPanel(new GridLayout(1,2));{
-			panelm3.setBackground(Color.DARK_GRAY);
-			panelm3.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
-			
-			myName = new JLabel(name);
-			myName.setForeground(Color.WHITE);
-			panelm3.add(myName);
-			JLabel myAvatar = new JLabel("MY IMAGE");
-			myAvatar.setForeground(Color.WHITE);
-			panelm3.add(myAvatar);
-			
-			
-			
-			
-			}
+			JPanel panelm3 = new NameAvatarPanel(name,"win", Color.PINK);
+//			JPanel panelm3 = new JPanel(new GridLayout(1,2));{
+//			panelm3.setBackground(Color.DARK_GRAY);
+//			panelm3.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
+//			
+//			myName = new JLabel(name);
+//			myName.setForeground(Color.WHITE);
+//			myName.setHorizontalAlignment(SwingConstants.CENTER);
+//			panelm3.add(myName);
+//			JLabel myAvatar = new JLabel("MY IMAGE");
+//			myAvatar.setForeground(Color.WHITE);
+//			myAvatar.setHorizontalAlignment(SwingConstants.CENTER);
+//			panelm3.add(myAvatar);
+//			
+//			
+//			
+//			
+//			}
 			panel5.add(panelm3);
-		
+//		
 		}
 		
 	// east Bottom
@@ -231,7 +234,12 @@ public class Game extends JFrame  {
 		
 		JPanel center1 = new PlayerPanel("You lose", Color.CYAN);
 		JPanel center2 = new PlayerPanel("You Win", Color.pink);
-		
+//		((PlayerPanel)center1)add.LifeBar();
+//		
+////		Fruit myFruit = new Banana();
+////		((Banana)myFruit).addBananaToBasket();
+////		JPanel center1 = new LifeBar();
+//		
 		
 		
 //		JPanel center2 = new JPanel(new BorderLayout());
@@ -259,6 +267,7 @@ public class Game extends JFrame  {
 //				center2.add(resultMy, BorderLayout.SOUTH);
 //				center2.add(storyMy,BorderLayout.CENTER);
 //				center2.add(lifeBar1, BorderLayout.NORTH);
+		
 // show cards Display bottom 
 		JPanel center3 = new JPanel(new BorderLayout());
 		center3.setBorder(BorderFactory.createMatteBorder(
