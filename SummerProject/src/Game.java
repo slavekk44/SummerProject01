@@ -234,143 +234,62 @@ public class Game extends JFrame  {
 		
 		JPanel center1 = new PlayerPanel("You lose", Color.CYAN);
 		JPanel center2 = new PlayerPanel("You Win", Color.pink);
-//		((PlayerPanel)center1)add.LifeBar();
-//		
-////		Fruit myFruit = new Banana();
-////		((Banana)myFruit).addBananaToBasket();
-////		JPanel center1 = new LifeBar();
-//		
+
 		
-		
-//		JPanel center2 = new JPanel(new BorderLayout());
-//		center2.setBorder(BorderFactory.createMatteBorder(
-//				5, 5, 0, 5, Color.PINK));
-////		center2.setBackground(Color.LIGHT_GRAY);
-//		lifeBar1 = new JLabel ("Life Bar My");
-//		lifeBar1.setBackground(Color.GREEN);
-//		lifeBar1.setHorizontalAlignment(JLabel. CENTER);
-//		lifeBar1.setOpaque(true);
-//		lifeBar1.setBorder(BorderFactory.createMatteBorder(
-//				1, 1, 1, 1, Color.BLACK));
-//		storyMy = new JLabel("You had luck and you Win");
-//		storyMy.setOpaque(true);
-//		storyMy.setHorizontalAlignment(JLabel. CENTER);
-//		storyMy.setFont(new Font("Monospaced", Font.BOLD, 20));
-//		
-//		resultMy = new JLabel("100");
-//		resultMy.setOpaque(true);
-//		resultMy.setFont(new Font("Monospaced", Font.BOLD, 25));
-//		resultMy.setHorizontalAlignment(JLabel. CENTER);
-//		resultMy.setBackground(Color.PINK);
-//		resultMy.setBorder(BorderFactory.createMatteBorder(
-//				15, 15, 15, 15, Color.PINK));
-//				center2.add(resultMy, BorderLayout.SOUTH);
-//				center2.add(storyMy,BorderLayout.CENTER);
-//				center2.add(lifeBar1, BorderLayout.NORTH);
-		
-// show cards Display bottom 
-		JPanel center3 = new JPanel(new BorderLayout());
-		center3.setBorder(BorderFactory.createMatteBorder(
-				0, 5, 5, 5, Color.CYAN));
-		center3.setBackground(Color.LIGHT_GRAY);
-		center3.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
-		
-		compound = BorderFactory.createCompoundBorder(raisedbevel, loweredbevel);
-		
-		cardName = new JLabel("OPPONENT CARDS");
-		cardName.setHorizontalAlignment(JLabel. CENTER);
-		cardName.setBackground(Color.PINK);
-		cardName.setFont(new Font("SansSerif", Font.BOLD, 20));
-			
-		cardName1 = new JLabel("ATTACK");
-		cardName1.setHorizontalAlignment(JLabel. CENTER);
-		cardName1.setBackground(Color.PINK);
-		cardName1.setFont(new Font("Monospaced", Font.BOLD, 20));
-		JPanel statsP1 = new JPanel(new GridLayout(3,2));
-		statsP1.setPreferredSize(new Dimension(155,50));
-	stats1 = new JLabel[6];
-	stats1[0] = new JLabel("A");
-	stats1[1] = new JLabel("15");
-	stats1[2] = new JLabel("B");
-	stats1[3] = new JLabel("25%");
-	stats1[4] = new JLabel("C");
-	stats1[5] = new JLabel("10%");
-	for(int i=0; i<stats1.length; i++)
-	{
-		stats1[i].setOpaque(true);
-		stats1[i].setBackground(Color.yellow);
-		stats1[i].setFont(new Font("Arial", Font.PLAIN , 20));
-		stats1[i].setBorder(compound);
-		add(stats1[i]);
-		statsP1.add(stats1[i]);
-	}
-	JLabel image1 = new JLabel("Image2");
-		image1.setOpaque(true);
-		image1.setHorizontalAlignment(JLabel. CENTER);
-	
-		center3.add(image1,BorderLayout.CENTER);
-		center3.add(statsP1,BorderLayout.EAST);
-		center3.add(cardName, BorderLayout.NORTH);
-		center3.add(cardName1, BorderLayout.SOUTH);
+//////////////////////// show cards Display bottom 
+		JPanel center3 = new CardDisplayPanel();
 		
 		center3.setBorder(compound);
 		
-		JPanel center4 = new JPanel(new BorderLayout());
-		center4.setBackground(Color.LIGHT_GRAY);
-		center4.setBorder(BorderFactory.createMatteBorder(
-				0, 10,10, 10, Color.PINK));
-		center4.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
-		compound = BorderFactory.createCompoundBorder(raisedbevel, loweredbevel);
-		cardName2 = new JLabel("MY CARDS");
-		cardName2.setHorizontalAlignment(JLabel. CENTER);
-		cardName2.setBackground(Color.PINK);
-		cardName2.setFont(new Font("SansSerif", Font.BOLD, 20));
-		
-		cardName3 = new JLabel("DEFEND");
-		cardName3.setHorizontalAlignment(JLabel. CENTER);
-		cardName3.setBackground(Color.PINK);
-		cardName3.setFont(new Font("Monospaced", Font.BOLD, 20));
-		JPanel statsP2 = new JPanel(new GridLayout(3,2));
-			statsP2.setPreferredSize(new Dimension(155,50));
-		stats1 = new JLabel[6];
-		stats1[0] = new JLabel("A");
-		stats1[1] = new JLabel("15");
-		stats1[2] = new JLabel("B");
-		stats1[3] = new JLabel("25%");
-		stats1[4] = new JLabel("C");
-		stats1[5] = new JLabel("10%");
-		for(int i=0; i<stats1.length; i++)
-		{
-			stats1[i].setOpaque(true);
-			stats1[i].setBackground(Color.yellow);
-			stats1[i].setFont(new Font("Arial", Font.PLAIN , 20));
-			stats1[i].setBorder(compound);
-			add(stats1[i]);
-			statsP2.add(stats1[i]);
-		}
-		JLabel image2 = new JLabel("image2");
-		image2.setOpaque(true);
-		image2.setHorizontalAlignment(JLabel. CENTER);
-		
-		center4.add(image2,BorderLayout.CENTER);
-		center4.add(statsP2,BorderLayout.EAST);
-		center4.add(cardName2, BorderLayout.NORTH);
-		center4.add(cardName3, BorderLayout.SOUTH);
-		
+		JPanel center4 = new CardDisplayPanel();
 		center4.setBorder(compound);
+//		center4.setBackground(Color.LIGHT_GRAY);
+//		center4.setBorder(BorderFactory.createMatteBorder(
+//				0, 10,10, 10, Color.PINK));
+//		center4.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
+//		compound = BorderFactory.createCompoundBorder(raisedbevel, loweredbevel);
+//		cardName2 = new JLabel("MY CARDS");
+//		cardName2.setHorizontalAlignment(JLabel. CENTER);
+//		cardName2.setBackground(Color.PINK);
+//		cardName2.setFont(new Font("SansSerif", Font.BOLD, 20));
+//		
+//		cardName3 = new JLabel("DEFEND");
+//		cardName3.setHorizontalAlignment(JLabel. CENTER);
+//		cardName3.setBackground(Color.PINK);
+//		cardName3.setFont(new Font("Monospaced", Font.BOLD, 20));
+//		JPanel statsP2 = new JPanel(new GridLayout(3,2));
+//			statsP2.setPreferredSize(new Dimension(155,50));
+//		stats1 = new JLabel[6];
+//		stats1[0] = new JLabel("A");
+//		stats1[1] = new JLabel("15");
+//		stats1[2] = new JLabel("B");
+//		stats1[3] = new JLabel("25%");
+//		stats1[4] = new JLabel("C");
+//		stats1[5] = new JLabel("10%");
+//		for(int i=0; i<stats1.length; i++)
+//		{
+//			stats1[i].setOpaque(true);
+//			stats1[i].setBackground(Color.yellow);
+//			stats1[i].setFont(new Font("Arial", Font.PLAIN , 20));
+//			stats1[i].setBorder(compound);
+//			add(stats1[i]);
+//			statsP2.add(stats1[i]);
+//		}
+//		JLabel image2 = new JLabel("image2");
+//		image2.setOpaque(true);
+//		image2.setHorizontalAlignment(JLabel. CENTER);
+//		
+//		center4.add(image2,BorderLayout.CENTER);
+//		center4.add(statsP2,BorderLayout.EAST);
+//		center4.add(cardName2, BorderLayout.NORTH);
+//		center4.add(cardName3, BorderLayout.SOUTH);
+		
+		
 		panel3.add(center1);
 		panel3.add(center2);
 		panel3.add(center3);
 		panel3.add(center4);
 		
-		
-		
-		
-		avatar = new JLabel("*");
-		avatar.setBackground(Color.BLUE);
-		avatar.setOpaque(true);
-		avatar.setBorder(BorderFactory.createLineBorder(Color.WHITE, 20));
-		add(avatar);
 		add(panel3,BorderLayout.CENTER);
 		}	    
 		
