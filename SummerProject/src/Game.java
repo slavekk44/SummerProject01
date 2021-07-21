@@ -23,14 +23,10 @@ public class Game extends JFrame  {
 	private JButton use,replace, cart1, cart2, inputButton; 
 	//panel4
 	private JTextField inputChat;
-	private JLabel outputChat,resultMy,resultEnemy, lifeBar, lifeBar1;
-	//panel5 east middle
-	private JLabel deckName, myName, enemyName, cardName, cardName1, cardName2,cardName3;
+	private JLabel outputChat, deckName;
 	
-	// center 1 2 3 4
-	private JLabel stats1[],stats2[];
-	private JLabel storyEnemy, storyMy;
-	private JLabel avatar;
+	
+	
 	
 	
 	
@@ -141,18 +137,8 @@ public class Game extends JFrame  {
 	// east middle
 		JPanel panel5 = new JPanel(new GridLayout(3,1));{
 			panel5.setBackground(Color.GREEN);
-			JPanel panelm1 = new NameAvatarPanel("DEBIL","AVATAR", Color.CYAN);
-//			JPanel panelm1 = new JPanel(new GridLayout(1,2));{
-//			panelm1.setBackground(Color.DARK_GRAY);
-//			enemyName = new JLabel(" Opponenet Name");
-//			enemyName.setForeground(Color.WHITE);
-//			panelm1.add(enemyName);
-//			panelm1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
-//			JLabel enemyAvatar = new JLabel("IMAGE");
-//			enemyAvatar.setForeground(Color.WHITE);
-//			panelm1.add(enemyAvatar);
-//			
-//			}
+			JPanel panelm1 = new NameAvatarPanel("DEBIL","images/avatar4.jpg", Color.CYAN);
+
 			panel5.add(panelm1);
 			
 			deckName = new JLabel("BoardGame");
@@ -162,7 +148,7 @@ public class Game extends JFrame  {
 			deckName.setFont(new Font("TimesRoman", Font.BOLD, 25));
 			panel5.add(deckName);
 			
-			JPanel panelm3 = new NameAvatarPanel(name,"win", Color.PINK);
+			JPanel panelm3 = new NameAvatarPanel(name,"images/avatar3.jpg", Color.PINK);
 //			JPanel panelm3 = new JPanel(new GridLayout(1,2));{
 //			panelm3.setBackground(Color.DARK_GRAY);
 //			panelm3.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
@@ -185,37 +171,49 @@ public class Game extends JFrame  {
 		}
 		
 	// east Bottom
-		JPanel panel6 = new JPanel(new GridLayout(2,1));{
-		panel6.setBackground(Color.darkGray);
-		cart1 = new JButton("ATTACK");
-		cart1.setOpaque(true);
-		cart1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
-		
 		compound = BorderFactory.createCompoundBorder(raisedbevel, loweredbevel);
+		JPanel panel6 = new JPanel(new GridLayout(2,2));{
 		
-		cart1.setBorder(compound);
-		panel6.add(cart1);
-		cart2 = new JButton("DEFFEND");
-		cart2.setOpaque(true);
-		cart2.setBorder(BorderFactory.createLineBorder(Color.ORANGE, 10));
-		
-		
-		cart2.setBorder(compound);
-		
-		panel6.add(cart2);
-		
-		
-		use = new JButton("Use");
-		use.setBackground(Color.LIGHT_GRAY);
-		use.setOpaque(true);
+	//	panel6.setBackground(Color.darkGray);
+		JPanel atack = new ButtonPanel("ATACK", Color.WHITE);
+		panel6.add(atack);
+		JPanel defend = new ButtonPanel("DEFEND", Color.WHITE);
+		panel6.add(defend);
+		JPanel use = new ButtonPanel("USE", Color.LIGHT_GRAY);
 		panel6.add(use);
-		replace = new JButton("Replace");
-		replace.setBackground(Color.LIGHT_GRAY);
-		replace.setOpaque(true);
-		size.height = 100;
-		replace.setPreferredSize(size);
+		JPanel replace = new ButtonPanel("REPLACE", Color.LIGHT_GRAY);
 		panel6.add(replace);
 		}
+//		cart1 = new JButton("ATTACK");
+//		cart1.setOpaque(true);
+//		cart1.setBorder(BorderFactory.createLineBorder(Color.WHITE, 10));
+//		
+		
+//		
+//		cart1.setBorder(compound);
+//		panel6.add(cart1);
+//		cart2 = new JButton("DEFFEND");
+//		cart2.setOpaque(true);
+//		cart2.setBorder(BorderFactory.createLineBorder(Color.ORANGE, 10));
+//		
+//		
+//		cart2.setBorder(compound);
+//		
+//		panel6.add(cart2);
+//		
+//		
+//		use = new JButton("Use");
+//		use.setBackground(Color.LIGHT_GRAY);
+//		use.setOpaque(true);
+//		panel6.add(use);
+//		replace = new JButton("Replace");
+//		replace.setBackground(Color.LIGHT_GRAY);
+//		replace.setOpaque(true);
+//		size.height = 100;
+//		replace.setPreferredSize(size);
+//		panel6.add(replace);
+//		}
+		
 		panel2.add(panel4);
 		panel2.add(panel5);
 		panel2.add(panel6);
@@ -233,15 +231,19 @@ public class Game extends JFrame  {
 		panel3.setPreferredSize(new Dimension(300,100));
 		
 		JPanel center1 = new PlayerPanel("You lose", Color.CYAN);
+		
+		//center1.add(lifeBar);
 		JPanel center2 = new PlayerPanel("You Win", Color.pink);
+		
 
 		
-//////////////////////// show cards Display bottom 
-		JPanel center3 = new CardDisplayPanel();
+//////////////////////// show cards Display Center Bottom
+		//enemy
+		JPanel center3 = new CardDisplayPanel(10,50,100,"images/3.jpg", "Pikachu","ATACK", Color.CYAN);
 		
 		center3.setBorder(compound);
-		
-		JPanel center4 = new CardDisplayPanel();
+		//my
+		JPanel center4 = new CardDisplayPanel(10,50,50, "images/2.jpg", "MY card Golum","ATTACK", Color.PINK);
 		center4.setBorder(compound);
 //		center4.setBackground(Color.LIGHT_GRAY);
 //		center4.setBorder(BorderFactory.createMatteBorder(

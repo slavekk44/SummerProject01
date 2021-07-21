@@ -6,7 +6,7 @@ public class NameAvatarPanel extends JPanel{
 
 	
 	private JLabel myAvatar, myName;
-	public NameAvatarPanel( String textName, String textAvatar, Color color) {
+	public NameAvatarPanel( String textName, String iconAvatar, Color color) {
 		
 		setLayout(new GridLayout(1,2));
 		setBackground(Color.DARK_GRAY);
@@ -16,7 +16,8 @@ public class NameAvatarPanel extends JPanel{
 		myName.setHorizontalAlignment(SwingConstants.CENTER);
 		//myName.setOpaque(true);
 		
-		myAvatar = new JLabel(textAvatar);
+		myAvatar = new JLabel();
+		myAvatar.setIcon(new ImageIcon(iconAvatar));
 		myAvatar.setForeground(Color.WHITE);
 		myAvatar.setHorizontalAlignment(SwingConstants.CENTER);
 		myAvatar.setBorder(BorderFactory.createLineBorder(Color.white,1));
