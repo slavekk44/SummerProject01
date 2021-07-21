@@ -21,8 +21,9 @@ public class Game extends JFrame implements ActionListener {
 	private JTextField inputChat;
 	private JLabel outputChat, deckName;
 	
-	private int myScore=10, enemyScore =50;
-
+	private int myScore=90, enemyScore =50;
+	private String chat;
+	private String chatName;
 	public Game(String name) {
 		Border compound, loweredbevel, raisedbevel;
 		Border redline = BorderFactory.createLineBorder(Color.gray, 25);
@@ -40,6 +41,7 @@ public class Game extends JFrame implements ActionListener {
 			settings.setBackground(Color.RED);
 			settings.setOpaque(true);
 			settings.setBorder(BorderFactory.createLineBorder(Color.WHITE, 5));
+			this.settings.addActionListener(this);
 			add(settings);
 			soundoff = new JButton("  Sound  ");
 			soundoff.setBackground(Color.WHITE);
@@ -100,12 +102,14 @@ public class Game extends JFrame implements ActionListener {
 					inputChat.setFont(new Font("TimesRoman", Font.BOLD, 20));
 					inputChat.setBorder(BorderFactory.createMatteBorder(1, 5, 5, 1, Color.red));
 					inputChat.setBackground(Color.LIGHT_GRAY);
+			        this.inputChat.addActionListener(this);
 
 					inputButton = new JButton("Send");
 					inputButton.setOpaque(true);
 					inputButton.setBorder(BorderFactory.createMatteBorder(1, 1, 5, 5, Color.red));
 					inputButton.setBackground(Color.LIGHT_GRAY);
 					inputButton.setPreferredSize(new Dimension(70, 50));
+					this.inputButton.addActionListener(this);
 
 					panelInput.add(inputChat, BorderLayout.CENTER);
 					panelInput.add(inputButton, BorderLayout.EAST);
@@ -131,7 +135,7 @@ public class Game extends JFrame implements ActionListener {
 				panel5.add(deckName);
 
 				JPanel panelm3 = new NameAvatarPanel(name, "images/avatar3.jpg", Color.PINK);
-
+				chatName=name;
 				panel5.add(panelm3);
 
 			}
@@ -143,6 +147,7 @@ public class Game extends JFrame implements ActionListener {
 
 				// panel6.setBackground(Color.darkGray);
 				JPanel atack = new ButtonPanel("ATACK", Color.WHITE);
+				
 				panel6.add(atack);
 				JPanel defend = new ButtonPanel("DEFEND", Color.WHITE);
 				panel6.add(defend);
@@ -201,11 +206,18 @@ public class Game extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
-		if(e.getSource() == settings) {
+		String input1 = inputChat.getText();
+		if(e.getSource() == inputButton) {
+			chat = input1; 
 			
+			outputChat.setText(chatName+"# "+chat);
+			inputChat.setText("");
 //			settings.setBackground(Color.BLUE);
 //		buttonPanel	atack.ButtonPanel().setBackground(Color.BLACK);
+		}
+		if(e.getSource() == settings) {
+			settings.setBackground(Color.GREEN);
+			
 		}
 		else {
 			
