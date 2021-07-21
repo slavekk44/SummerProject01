@@ -20,6 +20,8 @@ public class Game extends JFrame implements ActionListener {
 	// panel4
 	private JTextField inputChat;
 	private JLabel outputChat, deckName;
+	
+	private int myScore=10, enemyScore =50;
 
 	public Game(String name) {
 		Border compound, loweredbevel, raisedbevel;
@@ -165,13 +167,13 @@ public class Game extends JFrame implements ActionListener {
 
 //MY LIFEBAR MESSAGE TO USER
 
-			JPanel center1 = new PlayerPanel("You lose", Color.CYAN, 100);
-			JPanel lifePanelEnemy = new LifeBar(100);
+			JPanel center1 = new PlayerPanel("You lose", Color.CYAN, enemyScore);
+			JPanel lifePanelEnemy = new LifeBar(enemyScore);
 			center1.add(lifePanelEnemy, BorderLayout.NORTH);
 			// center1.add(lifeBar);
 //ENEMY 
-			JPanel center2 = new PlayerPanel("You Win", Color.pink, 50);
-			JPanel lifePanelMy = new LifeBar(50);
+			JPanel center2 = new PlayerPanel("You Win", Color.pink, myScore);
+			JPanel lifePanelMy = new LifeBar(myScore);
 			center2.add(lifePanelMy, BorderLayout.NORTH);
 
 //////////////////////// show cards Display Center Bottom
