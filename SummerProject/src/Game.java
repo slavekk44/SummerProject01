@@ -219,6 +219,7 @@ public class Game extends JFrame implements ActionListener {
 			settings.setBackground(Color.GREEN);
 			
 		}
+		
 		else {
 			
 		}
